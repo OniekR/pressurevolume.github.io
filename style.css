@@ -1,0 +1,198 @@
+/* Equinor color scheme and variables */
+:root {
+    --equinor-red: #E31B23;
+    --equinor-accent: #FF3B4D;
+    --equinor-blue: #E9F4F8;
+    --equinor-green: #27ae60;
+    --text-color: #14222A;
+    --card-bg: #FFFFFF;
+    --muted: #6b6b6b;
+    /* Legacy aliases for compatibility */
+    --accent: var(--equinor-red);
+    --card: var(--card-bg);
+}
+
+/* Global styles */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    font-family: Segoe UI, Roboto, Arial, sans-serif;
+    background: var(--equinor-blue);
+    color: var(--text-color);
+}
+
+/* Header and navigation */
+header {
+    background: var(--card-bg);
+    color: var(--text-color);
+    padding: 10px 16px;
+    border-bottom: 1px solid rgba(20, 34, 42, 0.06);
+}
+
+.headerWrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    max-width: 1131px;
+    margin: 0 auto;
+    height: 72px;
+    padding: 0 16px;
+    gap: 1rem;
+}
+
+.firmalogo {
+    height: 48px;
+    display: block;
+}
+
+.linker {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+/* Navigation link styles */
+.linkHome,
+.linkVF {
+    padding: 0.6rem 0.8rem;
+    color: var(--text-color);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 6px;
+    background: transparent;
+    transition: background 0.15s ease, color 0.15s ease, transform 0.06s ease;
+}
+
+/* Hover and focus states */
+.linkHome:hover,
+.linkVF:hover,
+.linkHome:focus,
+.linkVF:focus {
+    background: linear-gradient(90deg, rgba(227, 27, 35, 0.08), rgba(255, 59, 77, 0.04));
+    color: var(--equinor-red);
+    transform: translateY(-1px);
+}
+
+/* Active/selected state */
+.linkHome.active,
+.linkVF.active {
+    background: linear-gradient(90deg, var(--equinor-red), var(--equinor-accent));
+    color: #fff;
+    box-shadow: 0 8px 24px rgba(227, 27, 35, 0.12);
+}
+
+/* Override for active links to have no background and black text */
+.linkHome.active,
+.linkVF.active {
+    background: transparent;
+    color: black;
+    box-shadow: none;
+}
+
+h1 {
+    color: var(--text-color);
+    text-align: center;
+    margin-bottom: 6px;
+    font-size: 2.25rem;
+    background: var(--card-bg);
+}
+
+.subtitle { text-align:center; color:var(--muted); margin-bottom:18px }
+
+/* Main content */
+.container {
+    max-width: 720px;
+    margin: 18px auto;
+    padding: 20px;
+    background: var(--card-bg);
+    box-shadow: 0 8px 20px rgba(20, 34, 42, 0.06);
+    border-radius: 8px;
+}
+
+/* Form elements */
+.field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 12px;
+}
+
+label {
+    font-weight: 600;
+    margin-bottom: 6px;
+}
+
+input[type="number"],
+input[type="text"] {
+    padding: 10px;
+    border: 1px solid #d6dbe3;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.row {
+    display: flex;
+    gap: 12px;
+}
+
+.row .field {
+    flex: 1;
+}
+
+/* Buttons */
+.button-primary {
+    background: linear-gradient(90deg, var(--equinor-red), var(--equinor-accent));
+    color: #fff;
+    border: none;
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.button-secondary {
+    background: #f5f7fb;
+    color: var(--text-color);
+    border: 1px solid rgba(20, 34, 42, 0.06);
+    padding: 10px 14px;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.quick-k-button {
+    padding: 6px 10px;
+    font-size: 0.9em;
+}
+
+/* Result display */
+.result {
+    margin-top: 16px;
+    padding: 12px;
+    border-radius: 6px;
+    background: #fff;
+    border: 1px solid rgba(20, 34, 42, 0.04);
+}
+
+/* Utility classes */
+.muted {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.small {
+    font-size: 13px;
+}
+
+.delta-note {
+    font-size: 70%;
+    color: var(--muted);
+}
+
+/* Footer */
+footer {
+    max-width: 720px;
+    margin: 8px auto;
+    color: var(--muted);
+    font-size: 13px;
+}

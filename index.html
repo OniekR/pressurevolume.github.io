@@ -1,0 +1,89 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pressurized volume calculator</title>
+    <link rel="icon" href="KR_fav.jpg" />
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+    <header>
+        <div class="headerWrapper">
+            <div>
+                <a href="https://insight.equinor.com/">
+                    <img class="firmalogo" src="KR_fav.jpg" alt="Equinor logo" />
+                </a>
+            </div>
+            <nav>
+                <div class="linker">
+                    <a class="linkHome active" href="https://oniekr.github.io/">Home</a>
+                    <a class="linkVF" href="https://oniekr.github.io/FV.github.io/">Flow Velocity</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <h1>⚙️ Pressurized Volume Calculator</h1>
+        <p class="subtitle">Keino - Required volume to be pumped calculator</p>
+        
+        <p class="muted">Calculate L (liters) using the formula: L = Volume (m³) * Δpressure (bar) / k</p>
+
+        <div class="row">
+            <div class="field">
+                <label for="volume">Volume (m³)</label>
+                <input id="volume" type="number" step="any" min="0" value="150" placeholder="e.g. 0.125" />
+            </div>
+            <div class="field">
+                <label for="delta">Final pressure (bar)</label>
+                <input id="delta" type="number" step="any" value="130" placeholder="e.g. 130" />
+                <small class="delta-note">(final pressure minus 20 bar performed behind the scenes)</small>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label for="k">Constant k</label>
+                <input id="k" type="number" step="any" value="21" placeholder="e.g. 0.7" />
+            </div>
+            <div class="field small">
+                <label>&nbsp;</label>
+                <div style="display: flex; gap: 8px;">
+                    <button id="calc" class="button-primary">Calculate</button>
+                    <button id="clear" class="button-secondary">Clear</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="field">
+                <label>Quick select k:</label>
+                <div style="display: flex; gap: 8px; flex-wrap: wrap;">
+                    <button id="k-wbm" class="button-secondary quick-k-button">WBM/brine: 21</button>
+                    <button id="k-obm" class="button-secondary quick-k-button">OBM: 18</button>
+                    <button id="k-baseoil" class="button-secondary quick-k-button">Base oil: 14</button>
+                    <button id="k-kfls" class="button-secondary quick-k-button">KFLS: 35</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="output" class="result" aria-live="polite">Result will appear here.</div>
+        <div id="output2" class="result small" aria-live="polite">Volume for 0-20 bar: Result will appear here.</div>
+    </main>
+
+    <footer>
+        <p>Inputs: `Volume` in m³, `Final pressure` in bar, `k` m³*bar/l.</p>
+        <p>Typical 'k' values are:</p>
+        <ul>
+            <li>WBM/brine: 21</li>
+            <li>OBM: 18</li>
+            <li>Baseoil: 13-15</li>
+            <li>KFLS: ~35</li>
+        </ul>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
