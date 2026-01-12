@@ -90,6 +90,16 @@ header {
     box-shadow: none;
 }
 
+/* Allow active links to show hover color when hovered or focused */
+.linkHome.active:hover,
+.linkVF.active:hover,
+.linkHome.active:focus,
+.linkVF.active:focus {
+    background: linear-gradient(90deg, rgba(227, 27, 35, 0.08), rgba(255, 59, 77, 0.04));
+    color: var(--equinor-red);
+    transform: translateY(-1px);
+}
+
 h1 {
     color: var(--text-color);
     text-align: center;
